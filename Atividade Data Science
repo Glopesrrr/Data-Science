@@ -1,0 +1,50 @@
+01-) 
+
+def main():
+    notas = []
+    print("Digite 'fim' para encerrar a entrada")
+    print("Digite as notas:")
+    while True:
+        nota = input().strip()
+        if nota.lower() == 'fim':
+            break
+        try:
+            notas.append(float(nota))
+        except ValueError:
+            print("Inserir um numero válido..")
+
+    
+    print("\nPrimeiros 12 registros:")
+    print(notas[:12])
+    
+    print("\nÚltimos 6 registros:")
+    print(notas[-6:])
+    
+    print("\nTamanho da massa de dados:", len(notas))
+
+if __name__ == "__main__":
+    main()
+
+2-)
+
+def main():
+    dados_notas = [
+        {"ID": 31, "nome": "MAZE RUNNER", "nota": 4.5},
+        {"ID": 32, "nome": "VINGADORES", "nota": 3.8},
+        {"ID": 33, "nome": "BATMAN", "nota": 2.9},
+        {"ID": 34, "nome": "HUNGER GAMES", "nota": 4.2},
+        {"ID": 35, "nome": "O PACOTE", "nota": 3.6}
+    ]
+
+    filme_encontrado = False
+    for filme in dados_notas:
+        if filme["ID"] == 32 and filme["nota"] > 3:
+            print(f'O filme "{filme["nome"]}" é considerado bom, com nota {filme["nota"]}.')
+            filme_encontrado = True
+            break
+    
+    if not filme_encontrado:
+        print(f'O filme "{filme["nome"]}" não tem a nota maior que 3.0')
+
+if __name__ == "__main__":
+    main()
